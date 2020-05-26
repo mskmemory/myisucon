@@ -10,7 +10,7 @@
 
 # 利用予定のツール一覧
 - alp
-- netdata
+- netdata //利用方法不明
 - pt-query-digest
 - Stackdriver Trace
 - Stackdriver Profiler
