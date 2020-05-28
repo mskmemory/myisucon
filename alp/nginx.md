@@ -15,3 +15,6 @@
     	}
     }
 ```
+
+
+echo -n > /var/log/nginx/access.log

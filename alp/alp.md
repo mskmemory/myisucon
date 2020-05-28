@@ -62,4 +62,5 @@ $ cat /path/to/access.log | alp ltsv -o [<項目名>, ...]
 例
 ``` bash
 $ cat /path/to/access.log | alp ltsv -o uri
+$ cat /var/log/nginx/access.log |alp ltsv -o count,uri,avg,method --sort=avg --reverse|head -10
 ```

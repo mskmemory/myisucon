@@ -12,5 +12,4 @@
 - alp
 - netdata //利用方法不明
 - pt-query-digest
-- Stackdriver Trace
-- Stackdriver Profiler
+- jaeger　//調査中
