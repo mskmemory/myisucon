@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: isu-runner
+    build: ./app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./app:/home/app
+      - ./isucon9-qualify:/home/isucon9-qualify
+    privileged: true
+    networks:
+      - app
+networks:
+  app:
+    driver: bridge
