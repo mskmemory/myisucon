@@ -42,6 +42,3 @@ docker exec -it isu-runner /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
 cd /home/app
 sh init.sh
 ```
-
-## 現状の問題点
-何故かUbuntuコンテナ内でDockerが動いてくれない
