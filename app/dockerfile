@@ -1,7 +1,13 @@
-FROM alpine
-RUN apk update && apk upgrade && \
-apk add  --no-cache bash git openssh make unzip curl go docker openrc 
+FROM ubuntu:18.04
+EXPOSE 3306
+RUN apt update
+RUN apt upgrade -y
+RUN apt install software-properties-common -y
+RUN add-apt-repository ppa:longsleep/golang-backports -y
+RUN apt update
+RUN apt install golang-1.13 -y
+RUN apt install git make unzip curl docker mysql-server mysql-client -y
 WORKDIR /home
 RUN mkdir app
 RUN mkdir isucon9-qualify
-CMD sh app/init.sh
+# CMD sh app/init.sh

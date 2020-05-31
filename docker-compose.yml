@@ -3,6 +3,9 @@ services:
   app:
     container_name: isu-runner
     build: ./app
+    tty: true
+    ports:
+      - "3306"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./app:/home/app

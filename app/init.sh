@@ -17,6 +17,16 @@ make
 # rm -rf images
 # mv v3_bench1 images
 
-cd /home/isucon9-qualify
-make 
-./bin/benchmarker
+# アプリケーション起動
+# cd webapp/sql
+# # databaseとuserを初期化する
+# mysql -u root < 00_create_database.sql
+# # データを流し込む
+# ./init.sh
+# cd webapp/go
+# make
+# ./isucari
+
+# cd /home/isucon9-qualify
+# make 
+# ./bin/benchmarker
