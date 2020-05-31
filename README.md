@@ -28,8 +28,8 @@ cd isu9-builder
 make
 ```
 
-**Creating isu-runner ... done
-Attaching to isu-runner**
+**Creating isu-runner ... <span style="color: green">done</span>  
+Attaching to isu-runner**  
 と出たら次へ。
 
 ②コンテナ内に入る
