@@ -3,6 +3,28 @@
 cd /home/isucon9-qualify/initial-data
 make
 
+# データベースのセットアップ
+cd /home/isucon9-qualify/webapp/sql
+service mysql start
+# databaseとuserを初期化する
+mysql -u root < 00_create_database.sql
+# データを流し込む
+./init.sh
+
+# アプリケーションの起動
+cd /home/isucon9-qualify/webapp/go
+export GO111MODULE=on
+go build -o isucari
+./isucari &
+
+# 初回ベンチマーク
+cd /home/isucon9-qualify
+make bin/benchmarker
+make bin/benchmark-worker
+make bin/payment
+make bin/shipment
+./bin/benchmarker
+
 # # 初期画像データダウンロード
 # cd /home/isucon9-qualify/webapp/public
 # curl -LO https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip
@@ -17,15 +39,6 @@ make
 # rm -rf images
 # mv v3_bench1 images
 
-# アプリケーション起動
-# cd webapp/sql
-# # databaseとuserを初期化する
-# mysql -u root < 00_create_database.sql
-# # データを流し込む
-# ./init.sh
-# cd webapp/go
-# make
-# ./isucari
 
 # cd /home/isucon9-qualify
 # make 

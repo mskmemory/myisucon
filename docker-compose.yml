@@ -9,7 +9,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./app:/home/app
-      - ./isucon9-qualify:/home/isucon9-qualify
+      - ./isucon9-qualify:/home/isucon9-qualify:cached
     privileged: true
     networks:
       - app

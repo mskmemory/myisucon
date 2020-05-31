@@ -5,8 +5,7 @@ RUN apt upgrade -y
 RUN apt install software-properties-common -y
 RUN add-apt-repository ppa:longsleep/golang-backports -y
 RUN apt update
-RUN apt install golang-1.13 -y
-RUN apt install git make unzip curl docker mysql-server mysql-client -y
+RUN apt install git make unzip curl docker mysql-server mysql-client golang -y
 WORKDIR /home
 RUN mkdir app
 RUN mkdir isucon9-qualify
