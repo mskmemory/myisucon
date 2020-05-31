@@ -14,7 +14,7 @@ eset:
 
 dl_images:
 	# 初期画像データダウンロード
-	@if [ ! -d "./upload" ]; then \
+	@if [ ! -d "$(INITPATH)/isucon9-qualify/webapp/public/upload" ]; then \
 		echo "***Get init_data.***"; \
 		cd $(INITPATH)/isucon9-qualify/webapp/public; \
 		curl -LO https://github.com/isucon/isucon9-qualify/releases/download/v2/initial.zip; \
@@ -23,7 +23,7 @@ dl_images:
 	fi
 
 	# ベンチマーク用画像データダウンロード
-	@if [ ! -d "./images" ]; then \
+	@if [ ! -d "$(INITPATH)/isucon9-qualify/initial-data/images" ]; then \
 		echo "***Get bench_images.***"; \
 		cd $(INITPATH)/isucon9-qualify/initial-data; \
 		curl -LO https://github.com/isucon/isucon9-qualify/releases/download/v2/bench1.zip; \
