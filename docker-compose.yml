@@ -1,16 +1,30 @@
 version: '3'
 services:
-  app:
-    container_name: isu-runner
+  app1:
+    container_name: isu-runner1
     build: ./app
     tty: true
-    ports:
-      - "3306"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - ./app:/home/app
       - ./isucon9-qualify:/home/isucon9-qualify:cached
-    privileged: true
+    networks:
+      - app
+  app2:
+    container_name: isu-runner2
+    build: ./app
+    tty: true
+    volumes:
+      - ./app:/home/app
+      - ./isucon9-qualify:/home/isucon9-qualify:cached
+    networks:
+      - app
+  app3:
+    container_name: isu-runner3
+    build: ./app
+    tty: true
+    volumes:
+      - ./app:/home/app
+      - ./isucon9-qualify:/home/isucon9-qualify:cached
     networks:
       - app
 networks:

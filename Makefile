@@ -31,6 +31,16 @@ dl_images:
 		mv v3_bench1 images; \
 	fi
 
+	# 初期設定用データをダウンロード
+	@if [ ! -f "$(INITPATH)/isucon9-qualify/initial-data/result/initial.sql" ]; then \
+		cd $(INITPATH)/isucon9-qualify/initial-data; \
+		curl -LO https://github.com/mskmemory/myisucon/releases/download/mytag/resource.zip; \
+		unzip resource; \
+		mv resource/result ./result; \
+		mv resource/pwcache ./pwcache; \
+		rm -rf resource resource.zip; \
+	fi
+
 run_docker:
 	# docker-composeの起動
 	cd $(INITPATH)
