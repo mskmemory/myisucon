@@ -11,6 +11,9 @@ mysql -u root < 00_create_database.sql
 # データを流し込む
 ./init.sh
 
+# Nginxの起動
+service nginx start
+
 # アプリケーションの起動
 cd /home/isucon9-qualify/webapp/go
 export GO111MODULE=on
