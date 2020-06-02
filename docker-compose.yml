@@ -2,31 +2,33 @@ version: '3'
 services:
   app1:
     container_name: isu-runner1
-    build: ./app
+    build: .
     tty: true
-    volumes:
-      - ./app:/home/app
-      - ./isucon9-qualify:/home/isucon9-qualify:cached
+    ports: 
+      - "3000:80"
+    # volumes:
+      # - ./app:/home/app
+      # - ./isucon9-qualify:/home/isucon9-qualify:cached
     networks:
       - app
   app2:
     container_name: isu-runner2
-    build: ./app
+    build: .
     tty: true
-    volumes:
-      - ./app:/home/app
-      - ./isucon9-qualify:/home/isucon9-qualify:cached
+    # volumes:
+      # - ./app:/home/app
+      # - ./isucon9-qualify:/home/isucon9-qualify:cached
     networks:
       - app
   app3:
     container_name: isu-runner3
-    build: ./app
+    build: .
     tty: true
-    volumes:
-      - ./app:/home/app
-      - ./isucon9-qualify:/home/isucon9-qualify:cached
+    # volumes:
+      # - ./app:/home/app
+      # - ./isucon9-qualify:/home/isucon9-qualify:cached
     networks:
       - app
 networks:
   app:
-    driver: bridge
+
