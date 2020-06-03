@@ -2,37 +2,34 @@ version: '3'
 services:
   app1:
     container_name: isu-runner1
-    build:
-      context: .
-      dockerfile: dockerfile
+    build: ./app
     tty: true
     ports: 
       - "3000:80"
-    # volumes:
+    volumes:
       # - ./app:/home/app
-      # - ./isucon9-qualify:/home/isucon9-qualify:cached
+      - ./images:/home/isucon9-qualify/initial-data/images:cached
+      - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
       - app
   app2:
     container_name: isu-runner2
-    build:
-      context: .
-      dockerfile: dockerfile
+    build: ./app
     tty: true
-    # volumes:
+    volumes:
       # - ./app:/home/app
-      # - ./isucon9-qualify:/home/isucon9-qualify:cached
+      - ./images:/home/isucon9-qualify/initial-data/images:cached
+      - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
       - app
   app3:
     container_name: isu-runner3
-    build:
-      context: .
-      dockerfile: dockerfile
+    build: ./app
     tty: true
-    # volumes:
+    volumes:
       # - ./app:/home/app
-      # - ./isucon9-qualify:/home/isucon9-qualify:cached
+      - ./images:/home/isucon9-qualify/initial-data/images:cached
+      - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
       - app
 networks:
