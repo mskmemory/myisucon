@@ -2,7 +2,9 @@ version: '3'
 services:
   app1:
     container_name: isu-runner1
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile
     tty: true
     ports: 
       - "3000:80"
@@ -13,7 +15,9 @@ services:
       - app
   app2:
     container_name: isu-runner2
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile
     tty: true
     # volumes:
       # - ./app:/home/app
@@ -22,7 +26,9 @@ services:
       - app
   app3:
     container_name: isu-runner3
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile
     tty: true
     # volumes:
       # - ./app:/home/app
