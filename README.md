@@ -12,11 +12,9 @@
 - pt-query-digest
 - jaeger　//調査中
 
-# 明日(6/1)やること
-https://teratail.com/questions/196533
-↑みてdockerの「cached」とCOPYとsyncを試す。
-
-→:cachedためしてみたらめっちゃ早くなってベンチも動いた。
+# 明日(6/6)やること
+・再現
+・dockerのIPアドレス固定方法
 
 # ISUCON9
 
@@ -29,12 +27,12 @@ make
 ```
 
 **Creating isu-runner ... <span style="color: green">done</span>  
-Attaching to isu-runner**  
+Attaching to isu-runner3, isu-runner1, isu-runner2**  
 と出たら次へ。
 
-②コンテナ内に入る
+②コンテナ内に入る（isu-runner1とか指定すること）
 ``` bash
-docker exec -it isu-runner /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"
+docker exec -it isu-runner bash
 ```
 
 ③初期セットアップ&初回ベンチ
