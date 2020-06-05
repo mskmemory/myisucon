@@ -34,13 +34,14 @@ dl_images:
 		rm -f bench1.zip; \
 	fi
 
-	# 初期設定用データをダウンロード
+	# 初期設定用データをダウンロード（5行目のrmいらないかも）
 	@if [ ! -f "$(INITPATH)/app/isucon9-qualify/initial-data/result/initial.sql" ]; then \
 		cd $(INITPATH)/app/isucon9-qualify/initial-data; \
 		curl -LO https://github.com/mskmemory/myisucon/releases/download/mytag/resource.zip; \
 		unzip resource; \
-		mv resource/result ./result; \
-		mv resource/pwcache ./pwcache; \
+		rm -rf pwcache; \
+		mv resource/result/* ./result; \
+		mv resource/pwcache .; \
 		rm -rf resource resource.zip; \
 	fi
 
