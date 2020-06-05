@@ -13,8 +13,9 @@
 - jaeger　//調査中
 
 # 明日(6/6)やること
-・再現
-・dockerのIPアドレス固定方法
+・再現  
+・dockerのIPアドレス固定方法  
+・docker-cmposeのcommand試したい
 
 # ISUCON9
 
