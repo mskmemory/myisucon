@@ -16,11 +16,3 @@ cd /home/isucon9-qualify/webapp/go
 export GO111MODULE=on
 go build -o isucari
 ./isucari &
-
-# The first benchmark test.
-cd /home/isucon9-qualify
-make bin/benchmarker
-make bin/benchmark-worker
-make bin/payment
-make bin/shipment
-./bin/benchmarker
