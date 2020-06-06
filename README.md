@@ -16,7 +16,3 @@
 ・再現  
 ・dockerのIPアドレス固定方法  
 ・docker-cmposeのcommand試したい
-
-
-## 現状の問題点
-/initial-dataに入ってdocker動かすところで止まるかもしれない
