@@ -3,10 +3,7 @@ INITPATH=`pwd`
 all: eset dl_images run_docker
 
 eset:
-	# 環境ファイルに現在のパスを追記
-	sed -e "s:INITPATH=.*:INITPATH=$(INITPATH):g" app/isu_init.env > app/isu.env
-
-	# isucon環境がない場合はクローン
+	# isucon環境をクローン
 	@if [ ! -d "./app/isucon9-qualify" ]; then \
 		cd $(INITPATH)/app; \
 		git clone https://github.com/tken2039/isucon9-qualify.git; \
@@ -51,12 +48,9 @@ run_docker:
 	docker-compose up -d
 
 	# 初期設定用スクリプトの導入
-	docker cp ./app/init.sh isu-runner1:/home/app/init.sh
-	docker cp ./app/bench.sh isu-runner1:/home/app/bench.sh
-	docker cp ./app/init.sh isu-runner2:/home/app/init.sh
-	docker cp ./app/bench.sh isu-runner2:/home/app/bench.sh
-	docker cp ./app/init.sh isu-runner3:/home/app/init.sh
-	docker cp ./app/bench.sh isu-runner3:/home/app/bench.sh
+	docker cp ./app/init.sh isu-runner1:/home/app/
+	docker cp ./app/init.sh isu-runner2:/home/app/
+	docker cp ./app/init.sh isu-runner3:/home/app/
 
 	# 終了通知
-	@echo "Setup Complete!"
+	@echo "Setup is Complete!"

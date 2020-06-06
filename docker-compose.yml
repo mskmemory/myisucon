@@ -11,7 +11,8 @@ services:
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
-      - app
+      app:
+        ipv4_address: 172.30.0.2
   app2:
     container_name: isu-runner2
     build: ./app
@@ -21,7 +22,8 @@ services:
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
-      - app
+      app:
+        ipv4_address: 172.30.0.3
   app3:
     container_name: isu-runner3
     build: ./app
@@ -31,7 +33,13 @@ services:
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
-      - app
+      app:
+        ipv4_address: 172.30.0.4
 networks:
   app:
+    driver: bridge
+    ipam:
+     driver: default
+     config:
+       - subnet: 172.30.0.0/24
 
