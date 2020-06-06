@@ -4,16 +4,21 @@
 
 
 #　ベンチまでの道のり
-## ダウンロード
-```
-git clone git@github.com:mskmemory/myisucon.git -b isu9-builder
-docker-compose up
+## ①コンテナ内に入る（isu-runner1とか指定すること）
+
+**Creating isu-runner ... <span style="color: green">done</span>  
+Attaching to isu-runner3, isu-runner1, isu-runner2**  
+と出たら次へ。
+
+## ②コンテナ内に入る（isu-runner1とか指定すること）
+``` bash
+docker exec -it isu-runner bash
 ```
 
-## アプリケーションの起動
-```
-cd app
-./init.sh #で動くようにする
+## ③初期セットアップ
+``` bash
+cd /home/app
+sh init.sh
 ```
 
 ## benchを回す際の注意点
