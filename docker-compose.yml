@@ -7,7 +7,6 @@ services:
     ports: 
       - "3000:80"
     volumes:
-      # - ./app:/home/app
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
@@ -18,7 +17,6 @@ services:
     build: ./app
     tty: true
     volumes:
-      # - ./app:/home/app
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
@@ -29,7 +27,6 @@ services:
     build: ./app
     tty: true
     volumes:
-      # - ./app:/home/app
       - ./images:/home/isucon9-qualify/initial-data/images:cached
       - ./upload:/home/isucon9-qualify/webapp/public/upload:cached
     networks:
