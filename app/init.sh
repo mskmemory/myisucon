@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # Create initial data.
 cd /home/isucon9-qualify/initial-data
