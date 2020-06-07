@@ -1,0 +1,12 @@
+git
+vim
+unzip
+curl
+mysql-server
+mysql-client
+golang
+vim
+lsof
+tcpdump
+nginx
+iproute2
