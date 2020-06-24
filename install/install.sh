@@ -27,9 +27,16 @@ done
 echo You selected $REPLY\) $ANS
 
 if [ ! $ANS = 'yes' ]; then
-    $SUDO apt install software-properties-common -y
-    $SUDO add-apt-repository ppa:longsleep/golang-backports -y
-    $SUDO apt update
+    git clone https://github.com/syndbg/goenv.git ~/.goenv
+    echo 'export GOENV_ROOT="$HOME/.goenv"' >> ~/.zshrc
+    echo 'export PATH="$GOENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(goenv init -)"' >> ~/.zshrc
+    echo 'export PATH="$GOROOT/bin:$PATH"' >> ~/.zshrc
+    echo 'export PATH="$PATH:$GOPATH/bin"' >> ~/.zshrc
+    source ~/.zshrc
+    goenv install 1.14.0
+    goenv global 1.14.0
+    source ~/.zshrc
 fi
 
 
