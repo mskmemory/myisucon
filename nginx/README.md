@@ -34,3 +34,17 @@ server {
 
 
 echo -n > /var/log/nginx/access.log
+
+
+# parameters解説
+　値の追加や削除のするためのディレクティブ(関数てきなもの)がいつくか用意されています。
+　
+## proxy_set_header
+## proxy_
+## 
+## proxy_set_header Host $http_host;
+ upstreamで指定した値(今回の場合は`webapp`)を代入する。
+## proxy_set_header True-Client-IP $remote_addr;
+
+## proxy_set_header Connection "";
+## proxy_http_version 1.1;
