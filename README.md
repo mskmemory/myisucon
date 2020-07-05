@@ -5,6 +5,7 @@
 - nginx
 - データベース
 - カーネルチューニング
+- redis
 
 # 利用予定のツール一覧
 - alp
@@ -12,6 +13,9 @@
 - pt-query-digest
 - jaeger　//調査中
 
+# 使えそうなサイト
+- https://gist.github.com/south37/d4a5a8158f49e067237c17d13ecab12a  
+DB，Nginx，OSのチューニングについて書いてある
 
 ## 現状の問題点
 /initial-dataに入ってdocker動かすところで止まるかもしれない
