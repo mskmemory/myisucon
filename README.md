@@ -11,7 +11,7 @@
 - alp
 - netdata //利用方法不明
 - pt-query-digest
-- jaeger　//調査中
+- ~~jaeger(Stackdriver tracer,profiler)　//調査中~~
 
 # 使えそうなサイト
 - https://gist.github.com/south37/d4a5a8158f49e067237c17d13ecab12a  
