@@ -17,3 +17,10 @@ go modを利用せずにgbと呼ばれるパッケージ管理ツールを利用
 ```
 gb vendor fetch [追加したいライブラリ]
 ```
+
+
+## kernelチューニング
+```
+fs.file-max=104857
+vm.swappiness=2
+```

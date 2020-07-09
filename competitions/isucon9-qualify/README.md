@@ -46,3 +46,9 @@ nginxかましてポートが変わっている場合は
 ```
 ./bin/benchmarker -target-url http://172.20.0.2:80  -shipment-url http://172.20.0.3:7000 -payment-url http://172.20.0.3:5555
 ```
+
+
+## kernelチューニング
+```
+設定を追記しても変化なし
+```

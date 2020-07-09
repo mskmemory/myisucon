@@ -29,6 +29,6 @@ DB，Nginx，OSのチューニングについて書いてある
 ## 今後の課題
 - query秒とループとどちらの方がどのくらい速いのかをしらべる
 - nginxの静的ファイルのキャッシュの設定 <--msk
-- カーネルチューニングの設定 <--tken
+- カーネルチューニングの設定(https://gist.github.com/matsukaz/806a006f60a3cbde255dbb6e651f3555#file-md) <--tken
 - IN句の利用
 - JOIN,UNIONの使いこなす
